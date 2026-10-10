@@ -1,0 +1,35 @@
+
+# Node.js dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# React build output
+dist/
+build/
+frontend/dist/
+frontend/build/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+frontend/.env
+backend/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# PostgreSQL database files and backups
+*.dump
+*.backup
+
+# IDE files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
