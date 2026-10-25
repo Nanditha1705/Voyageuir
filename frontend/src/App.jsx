@@ -11,24 +11,22 @@ function NavBar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   return (
-    <div style={{ background: '#fff', borderBottom: '1px solid #e5e7eb' }}>
-      <div className="container row" style={{ justifyContent: 'space-between', padding: '14px 24px' }}>
-        <Link to="/" style={{ fontWeight: 700, color: '#1a1a1a' }}>✈️ Voyageuir</Link>
+    <header className="nav">
+      <div className="container nav-inner">
+        <Link to="/" className="brand">Travel Organiser</Link>
         {user ? (
           <div className="row">
-            <span>Hi, {user.name}</span>
-            <button className="btn secondary" onClick={() => { logout(); navigate('/login'); }}>
-              Log out
-            </button>
+            <span className="muted">{user.name}</span>
+            <button className="btn secondary" onClick={() => { logout(); navigate('/login'); }}>Log out</button>
           </div>
         ) : (
           <div className="row">
             <Link to="/login">Log in</Link>
-            <Link to="/register"><button className="btn">Sign up</button></Link>
+            <Link to="/register" className="btn">Sign up</Link>
           </div>
         )}
       </div>
-    </div>
+    </header>
   );
 }
 
