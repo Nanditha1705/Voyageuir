@@ -18,6 +18,14 @@ app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:5173' }));
 app.use(express.json());
 
 app.get('/api/health', (req, res) => res.json({ ok: true }));
+// Version 2 API endpoint
+app.get('/api/version', (req, res) => {
+  res.json({
+    application: 'Travel Organizer',
+    version: '2.0',
+    message: 'Backend Version 2 is running successfully'
+  });
+});
 
 app.use('/api/auth', authRoutes);
 app.use('/api/trips', tripsRoutes);
